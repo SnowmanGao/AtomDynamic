@@ -8,25 +8,16 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Node2D",
-"class": "Main",
-"language": "GDScript",
-"path": "res://scripts/main/main.gd"
-} ]
-_global_script_class_icons={
-"Main": ""
-}
-
 [application]
 
 config/name="Atom Dynamic"
 run/main_scene="res://start.tscn"
-config/icon="res://icon.png"
+config/icon="res://artAssets/icon.png"
 
 [autoload]
 
-Settings="*res://scripts/GLOBAL/settings.gd"
+Settings="*res://scripts/GLOBAL/Settings.gd"
+Debugger="*res://scripts/GLOBAL/Debug.gd"
 
 [gui]
 

@@ -32,13 +32,27 @@ func allInOneEntered(body, l_0_r_1:int):
 	match body.atomID:
 		1:
 			if(randf() < captureProbablity && \
-					capturedAtomList[l_0_r_1] == null && \
-					body.isCaptured == false):
+				capturedAtomList[l_0_r_1] == null && \
+				body.isCaptured == false):
+				
+				if(capturedAtomList[l_0_r_1] != null):
+					print(body.linear_velocity.length_squared())
+					# NTR Bug!!!
+					capturedAtomList[l_0_r_1].isCaptured = false					
+					body.isCaptured = true
+					capturedAtomList[l_0_r_1] = body						
+
 				# 三个条件，一次满足
 				capturedAtomList[l_0_r_1] = body
 				body.isCaptured = true
 		8:
-			# Debugger.printl("O")
+			if(capturedAtomList[l_0_r_1] != null &&\
+					body.linear_velocity.length_squared() > 20000):
+						print(body.linear_velocity.length_squared())
+						
+						# O撞开了H
+						capturedAtomList[l_0_r_1].isCaptured = false					
+						capturedAtomList[l_0_r_1] = null
 			pass
 		-1:
 			# Debugger.printl("Wall")

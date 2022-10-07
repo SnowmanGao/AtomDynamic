@@ -1,10 +1,9 @@
 extends Node2D
 
-class_name Main
-
 export var randSpeedRange:float = 400
 onready var atom_H_proto = preload("res://prefabs/atom_H.tscn")
 onready var atom_O_proto = preload("res://prefabs/atom_O.tscn")
+var Debugger = null
 
 
 var H_list = []
@@ -13,6 +12,8 @@ var O_list = []
 var time = 0
 var count = 0
 
+func initDebugger():
+	Debugger = get_node("/root/mainSpace/ui/debugger")
 
 func generateAtomByID(id:int):
 	var atom

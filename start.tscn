@@ -54,7 +54,7 @@ margin_left = 223.0
 margin_top = 18.0
 margin_right = 297.0
 margin_bottom = 42.0
-value = 20.0
+value = 40.0
 
 [node name="atom_O_count" type="Label" parent="."]
 margin_left = 357.0
@@ -72,7 +72,7 @@ margin_left = 223.0
 margin_top = 18.0
 margin_right = 297.0
 margin_bottom = 42.0
-value = 10.0
+value = 20.0
 
 [node name="CD seconds" type="Label" parent="."]
 margin_left = 357.0
@@ -123,5 +123,14 @@ theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "Start_Fuck"
 script = ExtResource( 3 )
+
+[node name="wtf" type="Label" parent="."]
+margin_left = 1088.0
+margin_top = 682.0
+margin_right = 1282.0
+margin_bottom = 730.0
+text = "What are you doing?
+Don't do that, or I'll be fucked!
+(wty sb)"
 
 [connection signal="pressed" from="start" to="start" method="_on_start_pressed"]
