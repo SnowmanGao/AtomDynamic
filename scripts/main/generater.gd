@@ -1,18 +1,16 @@
 extends Timer
 
-var count_H = 10
-var count_O = 5
-var CD = 0.1
+var count_H
+var count_O
 
 var n:int = 0
 var m:int = 0
 
 func _ready():
 	randomize()
-	self.wait_time = CD
-	self.count_H = Settings.atom_H_count
-	self.count_O = Settings.atom_O_count
-	self.CD = Settings.CD_seconds
+	self.wait_time = Settings.Get("CD_seconds")
+	self.count_H = Settings.Get("atom_H_count")
+	self.count_O = Settings.Get("atom_O_count")
 
 func _on_Timer_timeout():
 	if(n < count_H):

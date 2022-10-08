@@ -62,4 +62,12 @@ margin_bottom = 720.0
 text = "What are you doing?
 Don't do that, or Wty will be fucked"
 
+[node name="saveData" type="Button" parent="ui"]
+margin_left = 1.0
+margin_top = 91.0
+margin_right = 71.0
+margin_bottom = 111.0
+text = "SaveData"
+
 [connection signal="timeout" from="generater" to="generater" method="_on_Timer_timeout"]
+[connection signal="pressed" from="ui/saveData" to="." method="saveData"]

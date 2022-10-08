@@ -13,6 +13,7 @@ extents = Vector2( 9, 9 )
 
 [node name="atom_H" type="RigidBody2D"]
 z_index = 1
+collision_layer = 3
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 script = ExtResource( 3 )

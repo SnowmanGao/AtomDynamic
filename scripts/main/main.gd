@@ -33,12 +33,28 @@ func generateAtomByID(id:int):
 	atom.velocity = randf() * randSpeedRange * Vector2.RIGHT.rotated(randf() * 360)
 	$container.add_child(atom)
 
-
+var temp = 0
 func calcSumEnergy():
 	var sum = 0
 	for atom in H_list:
 		sum += atom.linear_velocity.length_squared()
 	for atom in O_list:
 		sum += 16 * atom.linear_velocity.length_squared()
-	return sum / 2000
+	temp = sum / 2000 
+	return temp
 
+var DATAs = []
+func calcDeltas():
+	var ans = [0,0,0]
+	for atom in O_list:
+		ans[atom.capturedCount] = ans[atom.capturedCount] + 1
+	DATAs.append([ans,temp])
+	return ans
+
+
+var data_file = "user://deltaData.save"
+func saveData():
+	var file = File.new()
+	file.open(data_file, File.WRITE)
+	file.store_string(str(DATAs))
+	file.close()

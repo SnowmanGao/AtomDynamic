@@ -4,11 +4,12 @@
 [ext_resource path="res://artAssets/min_yaheiui.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scripts/start/buttonStart.gd" type="Script" id=3]
 [ext_resource path="res://artAssets/min_yaheiui_small.tres" type="DynamicFont" id=4]
-[ext_resource path="res://scripts/start/version.gd" type="Script" id=5]
+[ext_resource path="res://scripts/start/startApp.gd" type="Script" id=6]
 
 [sub_resource type="Theme" id=1]
 
 [node name="startApp" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="bg" type="Sprite" parent="."]
 position = Vector2( 0, -0.321272 )
@@ -36,7 +37,6 @@ custom_colors/font_color = Color( 0.278431, 0.278431, 0.278431, 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "ver.　{{Settings.version}}"
 valign = 1
-script = ExtResource( 5 )
 
 [node name="atom_H_count" type="Label" parent="."]
 margin_left = 357.0
@@ -54,7 +54,6 @@ margin_left = 223.0
 margin_top = 18.0
 margin_right = 297.0
 margin_bottom = 42.0
-value = 40.0
 
 [node name="atom_O_count" type="Label" parent="."]
 margin_left = 357.0
@@ -72,9 +71,8 @@ margin_left = 223.0
 margin_top = 18.0
 margin_right = 297.0
 margin_bottom = 42.0
-value = 20.0
 
-[node name="CD seconds" type="Label" parent="."]
+[node name="CD_seconds" type="Label" parent="."]
 margin_left = 357.0
 margin_top = 297.0
 margin_right = 660.0
@@ -85,14 +83,13 @@ custom_fonts/font = ExtResource( 2 )
 text = "生成冷却(s)"
 valign = 1
 
-[node name="SpinBox" type="SpinBox" parent="CD seconds"]
+[node name="SpinBox" type="SpinBox" parent="CD_seconds"]
 margin_left = 223.0
 margin_top = 18.0
 margin_right = 297.0
 margin_bottom = 42.0
 max_value = 5.0
 step = 0.01
-value = 0.1
 
 [node name="probablity" type="Label" parent="."]
 margin_left = 357.0
@@ -112,7 +109,6 @@ margin_right = 297.0
 margin_bottom = 42.0
 max_value = 1.0
 step = 0.01
-value = 0.1
 
 [node name="start" type="Button" parent="."]
 margin_left = 320.0
