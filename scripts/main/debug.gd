@@ -10,8 +10,8 @@ func _ready():
 
 func _process(_delta):
 	self.text = ''.join([
-		"Σ动能＝", str(main.calcSumEnergy()), "\n",
-		"δ＝", str(main.calcDeltas()), "\n",
+		"ΣEk(动能)＝", str(main.calcSumEnergy()), "\n",
+		"δ(分布系数)＝", str(main.calcDeltas()), "\n",
 		message, "\n",
 	])
 

@@ -17,7 +17,12 @@ config/icon="res://artAssets/icon.png"
 [autoload]
 
 Settings="*res://scripts/GLOBAL/Settings.gd"
-Debugger="*res://scripts/GLOBAL/Debug.gd"
+Debugger="*res://scripts/GLOBAL/Debugger.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1021
 
 [gui]
 
