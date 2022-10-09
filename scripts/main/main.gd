@@ -43,18 +43,18 @@ func calcSumEnergy():
 	temp = sum / 2000
 	return temp
 
-var DATAs = []
+# var DATAs = []
 func calcDeltas():
 	var ans = [0,0,0]
 	for atom in O_list:
 		ans[atom.capturedCount] = ans[atom.capturedCount] + 1
-	DATAs.append([ans[0], ans[1], ans[2], temp])
+	# DATAs.append([ans[0], ans[1], ans[2], temp])
 	return ans
 
 
-var data_file = "user://deltaData.save"
-func saveData():
-	var file = File.new()
-	file.open(data_file, File.WRITE)
-	file.store_string(str(DATAs))
-	file.close()
+# var data_file = "user://deltaData.save"
+# func saveData():
+# 	var file = File.new()
+# 	file.open(data_file, File.WRITE)
+# 	file.store_string(str(DATAs))
+# 	file.close()

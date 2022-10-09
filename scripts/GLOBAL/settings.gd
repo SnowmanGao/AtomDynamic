@@ -36,7 +36,7 @@ func Set(name:String, value):
 func Init():
 	var PATH = "/root/startApp/"
 	Register("VERSION", "ver.　" + _VERSION, "text", NodePath(PATH + "version"))
-	Register("init_Ek",  400, "value", NodePath(PATH + "init_Ek/SpinBox"))
+	Register("init_Ek",  800, "value", NodePath(PATH + "init_Ek/SpinBox"))
 	Register("expression",  "0.0327 * (atan(0.0002 * v_square - 0.327) + 1.5)", "text", NodePath(PATH + "expression/TextEdit"))
 	Register("suihai_0",  0.6, "value", NodePath(PATH + "suihai_list/have0"))
 	Register("suihai_1",  0.3, "value", NodePath(PATH + "suihai_list/have1"))

@@ -61,9 +61,9 @@ text = "2"
 
 [node name="init_Ek" type="Label" parent="."]
 margin_left = 580.0
-margin_top = 250.0
+margin_top = 252.0
 margin_right = 918.0
-margin_bottom = 314.0
+margin_bottom = 316.0
 rect_pivot_offset = Vector2( -287, 42 )
 custom_colors/font_color = Color( 0.898039, 0.282353, 0.282353, 1 )
 custom_fonts/font = ExtResource( 4 )
@@ -79,9 +79,9 @@ max_value = 10000.0
 
 [node name="expression" type="Label" parent="."]
 margin_left = 580.0
-margin_top = 313.0
+margin_top = 324.0
 margin_right = 931.0
-margin_bottom = 377.0
+margin_bottom = 388.0
 rect_pivot_offset = Vector2( -476, -41 )
 custom_colors/font_color = Color( 1, 1, 1, 0.482353 )
 custom_fonts/font = ExtResource( 4 )
@@ -129,9 +129,9 @@ text = "——————————————>"
 
 [node name="suihai_list" type="Label" parent="."]
 margin_left = 580.0
-margin_top = 370.0
+margin_top = 393.0
 margin_right = 1018.0
-margin_bottom = 434.0
+margin_bottom = 457.0
 rect_pivot_offset = Vector2( -287, 42 )
 custom_colors/font_color = Color( 1, 1, 1, 0.482353 )
 custom_fonts/font = ExtResource( 4 )
@@ -188,9 +188,9 @@ text = "﹣"
 
 [node name="CD_seconds" type="Label" parent="."]
 margin_left = 580.0
-margin_top = 429.0
+margin_top = 465.0
 margin_right = 918.0
-margin_bottom = 493.0
+margin_bottom = 529.0
 rect_pivot_offset = Vector2( -648, -164 )
 custom_colors/font_color = Color( 1, 1, 1, 0.482353 )
 custom_fonts/font = ExtResource( 4 )
@@ -206,10 +206,10 @@ max_value = 5.0
 step = 0.01
 
 [node name="start" type="Button" parent="."]
-margin_left = 547.0
-margin_top = 546.0
-margin_right = 931.0
-margin_bottom = 610.0
+margin_left = 560.0
+margin_top = 568.0
+margin_right = 944.0
+margin_bottom = 632.0
 theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 5 )
 text = "Start_Fuck"
