@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scripts/main/main.gd" type="Script" id=1]
+[ext_resource path="res://scripts/main/mainSpace.gd" type="Script" id=1]
 [ext_resource path="res://scripts/main/centerize.gd" type="Script" id=2]
 [ext_resource path="res://artAssets/bg.png" type="Texture" id=3]
 [ext_resource path="res://scripts/main/generater.gd" type="Script" id=4]
 [ext_resource path="res://scripts/main/wall.gd" type="Script" id=5]
-[ext_resource path="res://scripts/main/debug.gd" type="Script" id=6]
+[ext_resource path="res://scripts/main/debugInfo.gd" type="Script" id=6]
 [ext_resource path="res://artAssets/Han_tiny.tres" type="DynamicFont" id=7]
+[ext_resource path="res://scripts/main/bgClick.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1207.34, 1007.56 )
 
 [node name="mainSpace" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,7 +21,15 @@ scale = Vector2( 0.642083, 0.397 )
 texture = ExtResource( 3 )
 offset = Vector2( 1200, 1001.07 )
 
+[node name="clickArea" type="Area2D" parent="bg"]
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/clickArea"]
+position = Vector2( 1197.34, 1008.63 )
+shape = SubResource( 1 )
+
 [node name="wall" type="StaticBody2D" parent="."]
+visible = false
 script = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall"]
@@ -25,15 +37,14 @@ position = Vector2( 147.472, 233.148 )
 scale = Vector2( 1.508, 1.34255 )
 polygon = PoolVector2Array( -246, -329, -237, 570, 1181, 565, 1181, 423, -97, 421, -97, -178, 927, -178, 929, 685, 1096, 683, 1086, -331 )
 
+[node name="generater" type="Timer" parent="."]
+autostart = true
+script = ExtResource( 4 )
+
 [node name="container" type="Node2D" parent="."]
 
 [node name="centerPos" type="Position2D" parent="."]
 script = ExtResource( 2 )
-
-[node name="generater" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-script = ExtResource( 4 )
 
 [node name="ui" type="Sprite" parent="."]
 z_index = 10
@@ -43,7 +54,7 @@ process_priority = -1
 margin_left = 6.0
 margin_top = 8.0
 margin_right = 202.0
-margin_bottom = 56.0
+margin_bottom = 84.0
 custom_fonts/font = ExtResource( 7 )
 text = "0"
 script = ExtResource( 6 )
@@ -60,11 +71,12 @@ text = "What are you doing?
 Don't do that, or Wty will be fucked"
 
 [node name="saveData" type="Button" parent="ui"]
-margin_left = 1.0
-margin_top = 91.0
-margin_right = 71.0
-margin_bottom = 111.0
+margin_left = 6.0
+margin_top = 112.0
+margin_right = 76.0
+margin_bottom = 132.0
 text = "SaveData"
 
+[connection signal="input_event" from="bg/clickArea" to="bg/clickArea" method="_on_clickArea_input_event"]
 [connection signal="timeout" from="generater" to="generater" method="_on_Timer_timeout"]
 [connection signal="pressed" from="ui/saveData" to="." method="saveData"]

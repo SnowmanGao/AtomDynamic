@@ -1,36 +1,21 @@
 extends Timer
 
-# var count_H
-# var count_O
-var count_HOH
+var count_HOH:int
 
 var n:int = 0
 var m:int = 0
 
 func _ready():
 	randomize()
+	count_HOH = Settings.Get("HOH_count")
 	self.wait_time = Settings.Get("CD_seconds")
-	self.count_HOH = Settings.Get("HOH_count")
-	# self.count_H = Settings.Get("atom_H_count")
-	# self.count_O = Settings.Get("atom_O_count")
 
-# func OLD_on_Timer_timeout():
-# 	if(n < count_H):
-# 		get_parent().generateAtomByID(1)
-# 		n = n + 1
-# 		return
-# 	if(m < count_O):
-# 		get_parent().generateAtomByID(8)
-# 		m = m + 1
-# 		return
-# 	if(n >= count_H or m >= count_O):
-# 		stop()
 
 func _on_Timer_timeout():
 	if(n < count_HOH):
-		var o = get_parent().generateAtomByID(8)
-		var h0 = get_parent().generateAtomByID(1)
-		var h1 = get_parent().generateAtomByID(1)
+		var o = Main.generateAtomByID(8)
+		var h0 = Main.generateAtomByID(1)
+		var h1 = Main.generateAtomByID(1)
 		o.setCapturedAtom(h0, 0)
 		o.setCapturedAtom(h1, 1)
 		n = n + 1

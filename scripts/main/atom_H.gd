@@ -11,8 +11,13 @@ func _ready():
 	self.mass = atomMass
 
 func setCaptured(val):
+	# layers: BIN mask to DEC
 	if(val):
-		# layers: BIN mask to DEC
 		self.layers = 2
 	else:
 		self.layers = 3
+	isCaptured = val
+
+
+func _onDestroyed():
+	pass

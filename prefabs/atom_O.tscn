@@ -52,6 +52,7 @@ position = Vector2( 0, 0.5 )
 z_index = 1
 shape = SubResource( 4 )
 
-[connection signal="body_entered" from="area_l" to="." method="allInOneEntered" binds= [ 0 ]]
-[connection signal="body_entered" from="area_r" to="." method="allInOneEntered" binds= [ 1 ]]
+[connection signal="tree_exited" from="." to="." method="_on_atom_O_tree_exited"]
+[connection signal="body_entered" from="area_l" to="." method="_allInOneEntered" binds= [ 0 ]]
+[connection signal="body_entered" from="area_r" to="." method="_allInOneEntered" binds= [ 1 ]]
 [connection signal="input_event" from="dragarea" to="dragarea" method="_on_areadrag_input_event"]

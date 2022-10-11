@@ -2,7 +2,6 @@ extends RigidBody2D
 
 const atomID:int = 8
 const atomMass:int = 16
-# var captureProbablity:float = Settings.Get("probablity")
 # 碰撞区域对象，用于定位俘获位置
 var capturerList = [null, null]
 # 俘获的原子的对象
@@ -26,9 +25,9 @@ func _physics_process(_delta):
 		var atom = capturedAtomList[i]
 		if(atom != null):
 			atom.global_position = capturerList[i].global_position
-			atom.linear_velocity = Vector2.ZERO
+			# atom.linear_velocity = Vector2.ZERO
 
-
+# 设置碰撞检测状态
 func setMonitor(l_0_r_1:int, state:bool):
 	monitoring[l_0_r_1] = state
 
@@ -65,7 +64,7 @@ func calcFuckbality(v_square:float) -> float:
 
 
 # 进入俘获区域事件
-func allInOneEntered(body, l_0_r_1:int):
+func _allInOneEntered(body, l_0_r_1:int):
 	if(!monitoring):
 		return
 
@@ -96,3 +95,10 @@ func allInOneEntered(body, l_0_r_1:int):
 
 				# wall撞开了H			
 				setCapturedAtom(null, l_0_r_1)
+
+
+func _onDestroyed():
+	for lr in [0,1]:
+		if capturedAtomList[lr] != null:
+			capturedAtomList[lr].linear_velocity = self.linear_velocity
+			setCapturedAtom(null, lr)

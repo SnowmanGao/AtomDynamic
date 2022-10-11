@@ -1,7 +1,7 @@
 extends Node
 
 var _all_settings = {}
-var _VERSION = "2022.10.9"
+var _VERSION = "2022.10.11"
 
 func Register(name:String, default, type:String, bind:NodePath):
 	# 注册

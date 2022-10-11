@@ -1,0 +1,254 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://artAssets/Han_tiny.tres" type="DynamicFont" id=1]
+[ext_resource path="res://artAssets/Han_small.tres" type="DynamicFont" id=2]
+[ext_resource path="res://artAssets/Han.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scripts/start/buttonStart.gd" type="Script" id=4]
+[ext_resource path="res://scripts/start/startApp.gd" type="Script" id=5]
+[ext_resource path="res://artAssets/bg.png" type="Texture" id=6]
+
+[sub_resource type="Theme" id=1]
+
+[node name="startApp" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 0, -0.321272 )
+scale = Vector2( 0.642, 0.397 )
+texture = ExtResource( 6 )
+offset = Vector2( 1200, 1001.07 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = 491.0
+margin_top = 96.0
+margin_right = 1003.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0.227451, 0.227451, 0.227451, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "撅世仅有的二元弱酸模拟器"
+align = 1
+valign = 1
+
+[node name="HOH_count" type="Label" parent="."]
+margin_left = 580.0
+margin_top = 186.0
+margin_right = 918.0
+margin_bottom = 250.0
+rect_pivot_offset = Vector2( -287, 42 )
+custom_colors/font_color = Color( 0.898039, 0.282353, 0.282353, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "H  A"
+valign = 1
+
+[node name="SpinBox" type="SpinBox" parent="HOH_count"]
+margin_left = 269.0
+margin_top = 18.0
+margin_right = 343.0
+margin_bottom = 42.0
+max_value = 1000.0
+
+[node name="Label" type="Label" parent="HOH_count"]
+margin_left = 26.0
+margin_top = 33.0
+margin_right = 36.0
+margin_bottom = 52.0
+custom_colors/font_color = Color( 0.898039, 0.282353, 0.282353, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "2"
+
+[node name="init_Ek" type="Label" parent="."]
+margin_left = 580.0
+margin_top = 252.0
+margin_right = 918.0
+margin_bottom = 316.0
+rect_pivot_offset = Vector2( -287, 42 )
+custom_colors/font_color = Color( 0.898039, 0.282353, 0.282353, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "初始速度"
+valign = 1
+
+[node name="SpinBox" type="SpinBox" parent="init_Ek"]
+margin_left = 269.0
+margin_top = 18.0
+margin_right = 343.0
+margin_bottom = 42.0
+max_value = 10000.0
+
+[node name="expression" type="Label" parent="."]
+margin_left = 580.0
+margin_top = 324.0
+margin_right = 931.0
+margin_bottom = 388.0
+rect_pivot_offset = Vector2( -476, -41 )
+custom_colors/font_color = Color( 1, 1, 1, 0.482353 )
+custom_fonts/font = ExtResource( 3 )
+text = "撞掉概率"
+valign = 1
+
+[node name="TextEdit" type="TextEdit" parent="expression"]
+margin_left = 269.0
+margin_top = 18.0
+margin_right = 606.0
+margin_bottom = 40.0
+highlight_current_line = true
+syntax_highlighting = true
+draw_tabs = true
+draw_spaces = true
+
+[node name="tips" type="Label" parent="expression"]
+margin_left = -509.0
+margin_top = -63.0
+margin_right = -260.0
+margin_bottom = 154.0
+rect_pivot_offset = Vector2( -476, -41 )
+custom_colors/font_color = Color( 0.14902, 0.466667, 0.921569, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "可以使用的函数：
+sin, cos, tan（三角函数）
+asin, acos, atan（反三角函数）
+sinh, cosh, tanh（双曲函数）
+abs（绝对值）, sqrt（平方根）
+pow（指数(2参数)）
+log（自然对数）
+floor,  round,  ceil（取整）
+……
+一切godot script允许的代码"
+
+[node name="arrow" type="Label" parent="expression"]
+margin_left = -254.0
+margin_top = 24.0
+margin_right = -5.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( -476, -41 )
+custom_colors/font_color = Color( 0.14902, 0.466667, 0.921569, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "——————————————>"
+
+[node name="suihai_list" type="Label" parent="."]
+margin_left = 580.0
+margin_top = 393.0
+margin_right = 1018.0
+margin_bottom = 457.0
+rect_pivot_offset = Vector2( -287, 42 )
+custom_colors/font_color = Color( 1, 1, 1, 0.482353 )
+custom_fonts/font = ExtResource( 3 )
+text = "吸附概率"
+valign = 1
+
+[node name="have0" type="SpinBox" parent="suihai_list"]
+margin_left = 269.0
+margin_top = 16.0
+margin_right = 343.0
+margin_bottom = 40.0
+max_value = 1.0
+step = 0.01
+
+[node name="have1" type="SpinBox" parent="suihai_list"]
+margin_left = 351.0
+margin_top = 16.0
+margin_right = 425.0
+margin_bottom = 40.0
+max_value = 1.0
+step = 0.01
+
+[node name="have0_label" type="Label" parent="suihai_list"]
+margin_left = 285.0
+margin_top = 43.0
+margin_right = 343.0
+margin_bottom = 62.0
+custom_fonts/font = ExtResource( 1 )
+text = "A²"
+
+[node name="nega" type="Label" parent="suihai_list/have0_label"]
+margin_left = 14.0
+margin_top = -7.0
+margin_right = 32.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 1 )
+text = "﹣"
+
+[node name="have1_label" type="Label" parent="suihai_list"]
+margin_left = 364.0
+margin_top = 43.0
+margin_right = 422.0
+margin_bottom = 62.0
+custom_fonts/font = ExtResource( 1 )
+text = "HA"
+
+[node name="nega" type="Label" parent="suihai_list/have1_label"]
+margin_left = 19.0
+margin_top = -7.0
+margin_right = 37.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 1 )
+text = "﹣"
+
+[node name="CD_seconds" type="Label" parent="."]
+margin_left = 580.0
+margin_top = 465.0
+margin_right = 918.0
+margin_bottom = 529.0
+rect_pivot_offset = Vector2( -648, -164 )
+custom_colors/font_color = Color( 1, 1, 1, 0.482353 )
+custom_fonts/font = ExtResource( 3 )
+text = "生成冷却(s)"
+valign = 1
+
+[node name="SpinBox" type="SpinBox" parent="CD_seconds"]
+margin_left = 269.0
+margin_top = 18.0
+margin_right = 343.0
+margin_bottom = 42.0
+max_value = 5.0
+step = 0.01
+
+[node name="start" type="Button" parent="."]
+margin_left = 560.0
+margin_top = 568.0
+margin_right = 944.0
+margin_bottom = 632.0
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Start_Fuck"
+script = ExtResource( 4 )
+
+[node name="version" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 14.0
+margin_top = 754.0
+margin_right = 270.0
+margin_bottom = 785.0
+rect_pivot_offset = Vector2( 0, 31.0359 )
+custom_colors/font_color = Color( 0.278431, 0.278431, 0.278431, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "ver.　{{Settings.version}}"
+valign = 1
+
+[node name="tips2" type="Label" parent="."]
+margin_left = 1304.0
+margin_top = 688.0
+margin_right = 1520.0
+margin_bottom = 773.0
+rect_pivot_offset = Vector2( -476, -41 )
+custom_colors/font_color = Color( 0.14902, 0.466667, 0.921569, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Tips：
+鼠标左键：拖动
+鼠标中间：生成H
+鼠标右键：删除"
+align = 1
+
+[node name="wtf" type="Label" parent="."]
+margin_left = 1608.0
+margin_top = 842.0
+margin_right = 1802.0
+margin_bottom = 890.0
+text = "What are you doing?
+Don't do that, or I'll be fucked!
+(wty sb)"
+
+[connection signal="pressed" from="start" to="start" method="_on_start_pressed"]

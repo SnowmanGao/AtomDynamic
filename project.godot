@@ -11,13 +11,14 @@ config_version=4
 [application]
 
 config/name="Atom Dynamic"
-run/main_scene="res://index.tscn"
+run/main_scene="res://scene/index.tscn"
 config/icon="res://artAssets/icon.png"
 
 [autoload]
 
 Settings="*res://scripts/GLOBAL/Settings.gd"
 Debugger="*res://scripts/GLOBAL/Debugger.gd"
+Main="*res://scripts/GLOBAL/Main.gd"
 
 [display]
 
