@@ -219,13 +219,25 @@ script = ExtResource( 4 )
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 14.0
-margin_top = 754.0
+margin_top = 712.0
 margin_right = 270.0
-margin_bottom = 785.0
+margin_bottom = 743.0
 rect_pivot_offset = Vector2( 0, 31.0359 )
 custom_colors/font_color = Color( 0.278431, 0.278431, 0.278431, 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "ver.　{{Settings.version}}"
+valign = 1
+
+[node name="author" type="Label" parent="version"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 9.0
+margin_right = 256.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 31.0359 )
+custom_colors/font_color = Color( 0.278431, 0.278431, 0.278431, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "By SnowmanGao"
 valign = 1
 
 [node name="tips2" type="Label" parent="."]
